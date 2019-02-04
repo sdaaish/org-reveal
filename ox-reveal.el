@@ -1267,7 +1267,7 @@ transformed fragment attribute to ELEM's attr_html plist."
 
 ;;;###autoload
 (defun org-reveal-publish-to-reveal
- (plist filename pub-dir)
+    (plist filename pub-dir)
   "Publish an org file to Html.
 
 FILENAME is the filename of the Org file to be published.  PLIST
@@ -1279,8 +1279,7 @@ Return output file name."
 
 ;; Register auto-completion for speaker notes.
 (when org-reveal-note-key-char
-  (add-to-list 'org-structure-template-alist
-               (list org-reveal-note-key-char "#+BEGIN_NOTES\n\?\n#+END_NOTES")))
+  (add-to-list 'org-structure-template-alist `(,org-reveal-note-key-char . "notes")))
 
 (provide 'ox-reveal)
 
